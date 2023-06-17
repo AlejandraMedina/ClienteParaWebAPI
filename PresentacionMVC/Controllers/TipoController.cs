@@ -10,35 +10,37 @@ namespace PresentacionMVC.Controllers
 
     public class TipoController : Controller
     {
-      
-        public TipoController()
-        { 
-              
 
+
+        public IConfiguration Conf { get; set; }
+
+        public string URLBaseApiTipos { get; set; }
+
+        public TipoController(IConfiguration conf)
+        {
+
+            Conf = conf;
+            URLBaseApiTipos = Conf.GetValue<String>("ApiTipos");
         }
 
 
         // GET: TipoController
         public ActionResult Index()        {
 
-           
-            string url = "http://localhost:5299/api/tipos/";
 
             HttpClient cliente = new HttpClient();
-            Task<HttpResponseMessage> tarea1 = cliente.GetAsync(url);
+            Task<HttpResponseMessage> tarea1 = cliente.GetAsync(URLBaseApiTipos);
             tarea1.Wait();
 
             HttpResponseMessage respuesta = tarea1.Result;
-            HttpContent contenido = respuesta.Content;
-            Task<String> tarea2 = contenido.ReadAsStringAsync();
-            tarea2.Wait();
-            String cuerpo = tarea2.Result;
+           
+            String cuerpo = LeerContenido(respuesta);
 
             if (respuesta.IsSuccessStatusCode)  // Es un status 200 indica todo se ejecutó correctamente.
             {
 
-                string json = tarea2.Result;
-                List<TipoViewModel> tipos= JsonConvert.DeserializeObject<List<TipoViewModel>>(json);
+                
+                List<TipoViewModel> tipos= JsonConvert.DeserializeObject<List<TipoViewModel>>(cuerpo);
 
                 if (tipos == null || tipos.Count == 0)
                 {
@@ -67,63 +69,161 @@ namespace PresentacionMVC.Controllers
         // GET: TipoController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            try
+            {
+                TipoViewModel vm = BuscarTipo(id);
+                return View(vm);
+            } 
+            catch(Exception ex )      
+            {
+                ViewBag.Mensaje = ex.Message;
+                return View();
+            }            
+          
         }
+
+
+
+        private TipoViewModel BuscarTipo(int id) 
+        {
+            HttpClient cliente = new HttpClient();
+            string url = URLBaseApiTipos + id;
+            var tarea = cliente.GetAsync(url);
+            tarea.Wait();
+            string cuerpo = LeerContenido(tarea.Result);
+
+            if (tarea.Result.IsSuccessStatusCode)
+            {
+                
+                TipoViewModel tipo = JsonConvert.DeserializeObject<TipoViewModel>(cuerpo);
+                return tipo;
+            }
+            else 
+            {
+                throw new Exception(cuerpo);
+            }
+
+        }
+
 
         // GET: TipoController/Create
         public ActionResult CreateTipo()
         {
+
             return View();
         }
 
         // POST: TipoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateTipo(TipoViewModel t)
+        public ActionResult CreateTipo(TipoViewModel vm)
         {
             try
             {
-                //t.Validar();
-               // AltaTipo.Alta(t);
-                
+                if (ModelState.IsValid)
+                {
+                    HttpClient cliente = new HttpClient();
+                    var tarea = cliente.PostAsJsonAsync(URLBaseApiTipos, vm);
+                    tarea.Wait();
+
+                    if (tarea.Result.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction(nameof(Index));
+                    }
+                    else
+                    {
+                        var tarea2 = tarea.Result.Content.ReadAsStringAsync();
+                        tarea2.Wait();
+                        ViewBag.Mesaje = tarea2.Result;
+                    }
+
+                }
+                else 
+                {
+                    ViewBag.Mensaje = "Los datos ingresados no son válidos";
+                }
                 return RedirectToAction(nameof(Index));
             }
           
             catch (Exception ex)
             {
-                ViewBag.Mensaje = "Oops! Ocurrió un error inesperado";
+                ViewBag.Mensaje = "Ocurrió un error inesperado.";
                 return View();
             }
         }
 
+
+
+
         // GET: TipoController/Edit/5
         public ActionResult EditTipo(int id)
-        {               
-            
-            return View();
+        {
+
+            try
+            {
+                TipoViewModel vm = BuscarTipo(id);
+                return View(vm);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Mensaje = ex.Message;
+                return View();
+            }
+
         }
+
 
         // POST: TipoController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditTipo(int id, TipoViewModel t)
+        public ActionResult EditTipo(int id, TipoViewModel vm)
         {
             try
             {
-               //No implementada no se pide
-               
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    string url = URLBaseApiTipos + vm.Id;
+                    HttpClient cliente = new HttpClient();
+                    Task<HttpResponseMessage> tarea = cliente.PutAsJsonAsync(URLBaseApiTipos, vm);
+                    tarea.Wait();
+                    HttpResponseMessage respuesta = tarea.Result;
+
+                    if (respuesta.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction(nameof(Index));
+                    }
+                    else
+                    {
+                        ViewBag.Mensaje = LeerContenido(respuesta);
+
+                    }
+                }
+                else
+                {
+                    ViewBag.Mensaje = "Los datos ingresados no son válidos";
+                }
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                ViewBag.Mensaje = ex.Message;
+                return View(vm);
             }
+            return View(vm);
         }
 
         // GET: TipoController/Delete/5
         public ActionResult DeleteTipo(int id)
         {
-            return View();
+            try
+            {
+                TipoViewModel vm = BuscarTipo(id);
+                return View(vm);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Mensaje = ex.Message;
+                return View();
+            }
         }
 
         // POST: TipoController/Delete/5
@@ -131,23 +231,32 @@ namespace PresentacionMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteTipo(int id, IFormCollection collection)
         {
-           
             try
             {
+                HttpClient cliente = new HttpClient();
+                string url = URLBaseApiTipos + id;
+                var tarea = cliente.DeleteAsync(url);
+                tarea.Wait();
+
+                HttpResponseMessage respuesta = tarea.Result;
+                if (respuesta.IsSuccessStatusCode)
+                {
+
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    ViewBag.Mensaje = LeerContenido(respuesta);
+                    return View();
+                }
                
-                ViewBag.Mensaje = "El tipo fue eliminado con éxito";
-                return RedirectToAction(nameof(Index));
-
-            }         
-             catch (Exception ex)
+            }
+            catch (Exception ex)
             {
-                ViewBag.Mensaje = "No es posible eliminar el tipo ya que tiene cabañas asociadas";
-
+                ViewBag.Mensaje = "No fue posible eliminar el tipo";
                 return View();
             }
-          
-            
-            
+
         }
 
 
@@ -158,6 +267,19 @@ namespace PresentacionMVC.Controllers
             return View();
         }
 
+
+
+        private string LeerContenido(HttpResponseMessage respuesta) 
+        {
+            HttpContent contenido = respuesta.Content;
+            Task<string> tarea2 = contenido.ReadAsStringAsync();
+            tarea2.Wait();
+            ViewBag.Mensaje = tarea2.Result;  
+            return tarea2.Result;
+        }
+
+
+    }
 
         // POST: TipoController/
       //  [HttpPost]
@@ -180,5 +302,5 @@ namespace PresentacionMVC.Controllers
            
         //}
        
-    }
+    //}
 }
