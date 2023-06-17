@@ -3,17 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using NuGet.Protocol;
 using PresentacionMVC.Models;
 using Microsoft.CodeAnalysis.Host;
-
-
+using Newtonsoft.Json;
 
 namespace PresentacionMVC.Controllers
 {
 
     public class TipoController : Controller
     {
-
-       
-
       
         public TipoController()
         { 
@@ -25,9 +21,48 @@ namespace PresentacionMVC.Controllers
         // GET: TipoController
         public ActionResult Index()        {
 
+           
+            string url = "http://localhost:5299/api/tipos/";
 
-            return View();
+            HttpClient cliente = new HttpClient();
+            Task<HttpResponseMessage> tarea1 = cliente.GetAsync(url);
+            tarea1.Wait();
+
+            HttpResponseMessage respuesta = tarea1.Result;
+            HttpContent contenido = respuesta.Content;
+            Task<String> tarea2 = contenido.ReadAsStringAsync();
+            tarea2.Wait();
+            String cuerpo = tarea2.Result;
+
+            if (respuesta.IsSuccessStatusCode)  // Es un status 200 indica todo se ejecutó correctamente.
+            {
+
+                string json = tarea2.Result;
+                List<TipoViewModel> tipos= JsonConvert.DeserializeObject<List<TipoViewModel>>(json);
+
+                if (tipos == null || tipos.Count == 0)
+                {
+
+                    ViewBag.Mensaje = "No hay tipos ingresados para mostrar.";
+                    
+                }
+                else
+                {
+                    return View(tipos);
+                
+                }
+            }
+            else 
+            {
+                ViewBag.Mensaje = cuerpo;
+
+            }
+
+            return View(new List<TipoViewModel>());
         }
+
+
+
 
         // GET: TipoController/Details/5
         public ActionResult Details(int id)

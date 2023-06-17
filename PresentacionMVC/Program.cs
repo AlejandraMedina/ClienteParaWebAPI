@@ -35,11 +35,13 @@ namespace PresentacionMVC
 
             app.MapControllerRoute(
                 name: "default",
-               // pattern: "{controller=Cabaña}/{action=CreateCabaña}/{id?}");
+
+            pattern: "{controller=Tipo}/{action=Index}/{id?}");
+            // pattern: "{controller=Cabaña}/{action=CreateCabaña}/{id?}");
             //pattern: "{controller=Usuario}/{action=Login}");
             //pattern: "{controller=Cabaña}/{action=CreateCabaña}/{id?}");
             //pattern: "{controller=Tipo}/{action=Index}");
-           pattern: "{controller=Home}/{action=Index}/{id?}");
+            //pattern: "{controller=Home}/{action=Index}/{id?}");// CON ESTE HABILITADO ENTREGAMOS 1 OBLIGATORIO
             //pattern: "{controller=Mantenimiento}/{action=CreateMantenimiento}/{8?}");
 
             app.Run();

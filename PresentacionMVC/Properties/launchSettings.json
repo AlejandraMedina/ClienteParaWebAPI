@@ -12,7 +12,7 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:5299",
+      "applicationUrl": "http://localhost:5240", // tengo duda de esto la cambie por la de la api estaba http://localhost:5299*/
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
