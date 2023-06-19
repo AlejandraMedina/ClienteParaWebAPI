@@ -4,6 +4,7 @@ using NuGet.Protocol;
 using PresentacionMVC.Models;
 using Microsoft.CodeAnalysis.Host;
 using Newtonsoft.Json;
+using System.Net.Http.Headers;
 
 namespace PresentacionMVC.Controllers
 {
@@ -30,6 +31,8 @@ namespace PresentacionMVC.Controllers
             if (HttpContext.Session.GetString("token") == null) RedirectToAction("Login", "Usuarios");
 
             HttpClient cliente = new HttpClient();
+
+            cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("token"));
             Task<HttpResponseMessage> tarea1 = cliente.GetAsync(URLBaseApiTipos);
             tarea1.Wait();
 
@@ -70,6 +73,8 @@ namespace PresentacionMVC.Controllers
         // GET: TipoController/Details/5
         public ActionResult Details(int id)
         {
+            HttpClient cliente = new HttpClient();
+            cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("token"));
             if (HttpContext.Session.GetString("token") == null) return RedirectToAction("Login", "Usuarios");
             try
             {
@@ -88,8 +93,9 @@ namespace PresentacionMVC.Controllers
 
         private TipoViewModel BuscarTipo(int id) 
         {
-
             HttpClient cliente = new HttpClient();
+            cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("token"));
+           
             string url = URLBaseApiTipos + id;
             var tarea = cliente.GetAsync(url);
             tarea.Wait();
@@ -112,6 +118,7 @@ namespace PresentacionMVC.Controllers
         // GET: TipoController/Create
         public ActionResult CreateTipo()
         {
+           
             if (HttpContext.Session.GetString("token") == null) return RedirectToAction("Login", "Usuarios");
 
             return View();
@@ -127,6 +134,9 @@ namespace PresentacionMVC.Controllers
                 if (ModelState.IsValid)
                 {
                     HttpClient cliente = new HttpClient();
+
+                    cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("token"));
+
                     var tarea = cliente.PostAsJsonAsync(URLBaseApiTipos, vm);
                     tarea.Wait();
 
@@ -162,7 +172,10 @@ namespace PresentacionMVC.Controllers
         // GET: TipoController/Edit/5
         public ActionResult EditTipo(int id)
         {
+
+
             if (HttpContext.Session.GetString("token") == null) return RedirectToAction("Login", "Usuarios");
+          
             try
             {
                 TipoViewModel vm = BuscarTipo(id);
@@ -188,6 +201,8 @@ namespace PresentacionMVC.Controllers
                 {
                     string url = URLBaseApiTipos + vm.Id;
                     HttpClient cliente = new HttpClient();
+                   
+                    cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("token"));
                     Task<HttpResponseMessage> tarea = cliente.PutAsJsonAsync(URLBaseApiTipos, vm);
                     tarea.Wait();
                     HttpResponseMessage respuesta = tarea.Result;
@@ -238,7 +253,8 @@ namespace PresentacionMVC.Controllers
         {
             try
             {
-                HttpClient cliente = new HttpClient();
+                HttpClient cliente = new HttpClient();                
+                cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("token"));
                 string url = URLBaseApiTipos + id;
                 var tarea = cliente.DeleteAsync(url);
                 tarea.Wait();
