@@ -27,6 +27,7 @@ namespace PresentacionMVC.Controllers
         // GET: TipoController
         public ActionResult Index()        {
 
+            if (HttpContext.Session.GetString("token") == null) RedirectToAction("Login", "Usuarios");
 
             HttpClient cliente = new HttpClient();
             Task<HttpResponseMessage> tarea1 = cliente.GetAsync(URLBaseApiTipos);
@@ -69,6 +70,7 @@ namespace PresentacionMVC.Controllers
         // GET: TipoController/Details/5
         public ActionResult Details(int id)
         {
+            if (HttpContext.Session.GetString("token") == null) return RedirectToAction("Login", "Usuarios");
             try
             {
                 TipoViewModel vm = BuscarTipo(id);
@@ -86,6 +88,7 @@ namespace PresentacionMVC.Controllers
 
         private TipoViewModel BuscarTipo(int id) 
         {
+
             HttpClient cliente = new HttpClient();
             string url = URLBaseApiTipos + id;
             var tarea = cliente.GetAsync(url);
@@ -109,6 +112,7 @@ namespace PresentacionMVC.Controllers
         // GET: TipoController/Create
         public ActionResult CreateTipo()
         {
+            if (HttpContext.Session.GetString("token") == null) return RedirectToAction("Login", "Usuarios");
 
             return View();
         }
@@ -158,7 +162,7 @@ namespace PresentacionMVC.Controllers
         // GET: TipoController/Edit/5
         public ActionResult EditTipo(int id)
         {
-
+            if (HttpContext.Session.GetString("token") == null) return RedirectToAction("Login", "Usuarios");
             try
             {
                 TipoViewModel vm = BuscarTipo(id);
@@ -214,6 +218,7 @@ namespace PresentacionMVC.Controllers
         // GET: TipoController/Delete/5
         public ActionResult DeleteTipo(int id)
         {
+            if (HttpContext.Session.GetString("token") == null) return RedirectToAction("Login", "Usuarios");
             try
             {
                 TipoViewModel vm = BuscarTipo(id);
@@ -263,7 +268,7 @@ namespace PresentacionMVC.Controllers
         // GET: TipoController/Edit/5
         public ActionResult BuscarTipoPorNombre()
         {
-
+            if (HttpContext.Session.GetString("token") == null) return RedirectToAction("Login", "Usuarios");
             return View();
         }
 
@@ -286,21 +291,22 @@ namespace PresentacionMVC.Controllers
        // [ValidateAntiForgeryToken]
        // public ActionResult BuscarTipoPorNombre(string nombre)
         //{
+         // if (HttpContext.Session.GetString("token") == null) return RedirectToAction("Login", "Usuarios");
 
-        //    try
-        //    {
+    //    try
+    //    {
 
-        //       //Tipo tipo = RepoTipo.BuscarTipoPorNombre(nombre);
+    //       //Tipo tipo = RepoTipo.BuscarTipoPorNombre(nombre);
 
-        //        return View(tipo);
-        //    }
-        //    catch
-        //    {
-        //        ViewBag.Mensaje = "No existe un tipo con el nombre ingresado";
-        //        return View();
-        //    }
-           
-        //}
-       
+    //        return View(tipo);
+    //    }
+    //    catch
+    //    {
+    //        ViewBag.Mensaje = "No existe un tipo con el nombre ingresado";
+    //        return View();
+    //    }
+
+    //}
+
     //}
 }

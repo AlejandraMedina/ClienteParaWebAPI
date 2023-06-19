@@ -36,6 +36,7 @@ namespace PresentacionMVC.Controllers
                 String url = Conf.GetValue<string>("ApiUsuarios");
                 HttpClient client = new HttpClient();
 
+                
                 var tarea = client.PostAsJsonAsync(url,vm);
                 tarea.Wait();
 
