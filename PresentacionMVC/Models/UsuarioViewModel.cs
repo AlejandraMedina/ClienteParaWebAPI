@@ -1,7 +1,7 @@
 ﻿
 namespace PresentacionMVC.Models
 {
-    public class LoginUsuarioViewModel
+    public class UsuarioViewModel
     {
 
         public int Id { get; set; }

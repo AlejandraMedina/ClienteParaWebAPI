@@ -12,6 +12,7 @@ namespace PresentacionMVC
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddSession();
+            builder.Services.AddHttpContextAccessor();
 
        
 
