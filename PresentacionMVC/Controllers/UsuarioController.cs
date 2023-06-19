@@ -48,7 +48,7 @@ namespace PresentacionMVC.Controllers
                 if (tarea.Result.IsSuccessStatusCode)                    
                 {
                     HttpContext.Session.SetString("token", body);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Tipo");
                 }
                 else 
                 {
