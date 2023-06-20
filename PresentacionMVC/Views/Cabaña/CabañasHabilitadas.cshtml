@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Dominio.EntidadesNegocio.Cabaña>
+
+@{
+    ViewData["Title"] = "CabañasHabilitadas";
+}
+
+<h1>Cabañas Habilitadas: </h1><br/>
+
+<div>@ViewBag.Mensaje</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumHabitacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Costo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jacuzzi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Habilitada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonasMax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Foto)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumHabitacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Costo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Jacuzzi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Habilitada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonasMax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Foto)
+            </td>
+           
+         
+        </tr>
+}
+    </tbody>
+</table>

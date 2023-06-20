@@ -1,0 +1,88 @@
+﻿@model PresentacionMVC.Models.AltaCabañaViewModel
+
+<h1>Crear Cabaña</h1><br/>
+
+<div>@ViewBag.Mensaje</div>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateCabaña"  enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+             <div class="form-group">
+                    <label asp-for="Cabaña.Nombre" class="control-label"></label>
+                    <input asp-for="Cabaña.Nombre" class="form-control" />
+                    <span asp-validation-for="Cabaña.Nombre" class="text-danger"></span>
+             </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="Cabaña.NumHabitacion" class="control-label"></label>
+                <input asp-for="Cabaña.NumHabitacion" class="form-control" />
+                <span asp-validation-for="Cabaña.NumHabitacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cabaña.Descripcion" class="control-label"></label>
+                <input asp-for="Cabaña.Descripcion" class="form-control" />
+                <span asp-validation-for="Cabaña.Descripcion" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Cabaña.Costo" class="control-label"></label>
+                <input asp-for="Cabaña.Costo" class="form-control" />
+                <span asp-validation-for="Cabaña.Costo" class="text-danger"></span>
+            </div>
+
+            
+
+            <div class="form-group">
+                <label asp-for="Cabaña.PersonasMax" class="control-label"></label>
+                <input asp-for="Cabaña.PersonasMax" class="form-control" />
+                <span asp-validation-for="Cabaña.PersonasMax" class="text-danger"></span>
+            </div>
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Cabaña.Jacuzzi" /> @Html.DisplayNameFor(model => model.Cabaña.Jacuzzi)
+                </label>
+            </div>
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Cabaña.Habilitada" /> @Html.DisplayNameFor(model => model.Cabaña.Habilitada)
+                </label>
+            </div>
+
+
+            <hr />
+            <div class="form-group">
+                <select name="IdTipoSeleccionado" id="IdTipoSeleccionado">
+                    @foreach (var tipo in Model.Tipos)
+                    {
+                        <option value="@tipo.Id">@tipo.Nombre</option>
+                    }
+                </select>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="Foto" class="control-label"></label>
+                <input asp-for="Foto" class="form-control" />
+                <span asp-validation-for="Foto" class="text-danger"></span>
+            </div>
+            <hr />
+            
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver al Inicio</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

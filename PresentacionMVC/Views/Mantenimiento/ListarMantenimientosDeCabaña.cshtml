@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Dominio.EntidadesNegocio.Mantenimiento>
+
+@{
+    ViewData["Title"] = "ListarMantenimientosDeCabaña";
+}
+
+<h1>Listar Mantenimientos De Cabañas</h1><br>
+
+<div>@ViewBag.Mensaje</div>
+
+<p>
+    <a asp-action="Create">Crear nuevo Mantenimiento</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Costo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Funcionario)
+            </th>          
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Costo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Funcionario)
+                    </td>   
+                </tr>
+        }
+    </tbody>
+</table>

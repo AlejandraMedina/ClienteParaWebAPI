@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Dominio.EntidadesNegocio.Cabaña>
+
+@{
+    ViewData["Title"] = "Cabañas por CantMaxPersonas";
+}
+
+<h1>Cabañas por cantidad máxima de personas:</h1><br/>
+
+<div>@ViewBag.Mensaje</div>
+
+<form asp-action="CabañasPorCantMaxPersonas">
+    <div class="form-group">
+        <label for="number" class="control-label">Ingrese cantidad de personas máxima: </label>
+        <input type="number" class="form-control" id="MaxPersonas" min=1 name="MaxPersonas">
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Buscar" class="btn btn-primary" />
+    </div>
+</form><br/>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumHabitacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Costo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jacuzzi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Habilitada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonasMax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Foto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo.Nombre)
+            </th>
+          
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumHabitacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Costo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Jacuzzi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Habilitada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonasMax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Foto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo.Nombre)
+            </td>
+          
+         
+        </tr>
+}
+    </tbody>
+</table>

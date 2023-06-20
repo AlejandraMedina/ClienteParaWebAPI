@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Dominio.EntidadesNegocio.Mantenimiento>
+
+@{
+    ViewData["Title"] = "MantenimientosPorCabañaPorFechas";
+}
+
+<h1>Mantenimientos Por Cabaña entre Fechas</h1><br/>
+<div>@ViewBag.Mensaje</div>
+
+
+<form asp-action="MantenimientosPorCabañaPorFechas">
+    <div class="form-group">
+        <label for="inicio" class="control-label">Ingrese fecha de inicio: </label>
+        <input type="Date" class="form-control" id="inicio" name="inicio">
+    </div>
+
+    <div class="form-group">
+        <label for="fin" class="control-label">Ingrese fecha de fin: </label>
+        <input type="Date" class="form-control" id="fin" name="fin">
+    </div><br>
+
+    <div class="form-group">
+        <input type="submit" value="Buscar" class="btn btn-primary" />
+    </div>
+</form>
+<br>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Costo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Funcionario)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Costo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Funcionario)
+                </td>          
+     
+            </tr>
+        }
+    </tbody>
+</table>
