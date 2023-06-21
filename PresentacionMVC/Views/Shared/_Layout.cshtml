@@ -62,21 +62,21 @@
 
     @if (Context.Session.GetString("usuarioLogueado") == "si" && Context.Session.GetString("Menu") == "si")
     {
-        <h1>Getión de tipos: </h1><br />
+        <h2>Getión de tipos: </h2><br />
 
         <a class="nav-link text-dark" asp-area="" asp-controller="Tipo" asp-action="CreateTipo">Crear Tipo</a>
         <a class="nav-link text-dark" asp-area="" asp-controller="Tipo" asp-action="Index">Listar tipos</a>      
         <a class="nav-link text-dark" asp-area="" asp-controller="Tipo" asp-action="BuscarTipoPorNombre">Buscar tipo por Nombre</a>
 
 
-        <h1>Gestión de Mantenimientos: </h1><br />
+        <h2>Gestión de Mantenimientos: </h2><br />
 
         
         <a class="nav-link text-dark" asp-area="" asp-controller="Mantenimiento" asp-action="listarMantenimientosDeCabaña">Listar mantenimientos de una cabaña</a>
         <a class="nav-link text-dark" asp-area="" asp-controller="Mantenimiento" asp-action="MantenimientosPorCabañaPorFechas">Ver mantenimientos realizados por cabaña entre fechas: </a>
 
 
-        <h1>Gestión de Cabañas: </h1><br />
+        <h2>Gestión de Cabañas: </h2><br />
 
 
         <a class="nav-link text-dark" asp-area="" asp-controller="Cabaña" asp-action="CreateCabaña">Crear Cabaña</a>

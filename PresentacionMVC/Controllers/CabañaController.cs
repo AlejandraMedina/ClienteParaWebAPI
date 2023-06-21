@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using PresentacionMVC.Models;
 using System.Net.Http.Headers;
+using System.Web;
 
 namespace PresentacionMVC.Controllers
 {
@@ -12,13 +13,17 @@ namespace PresentacionMVC.Controllers
 
         public string URLBaseApiCabaña { get; set; }
         public string URLBaseApiTipo { get; set; }
+        public IWebHostEnvironment WHE { get; set; }
+
 
         public CabañaController(IConfiguration conf)
         {
 
             Conf = conf;
             URLBaseApiCabaña = Conf.GetValue<String>("ApiCabaña");
-            URLBaseApiTipo = Conf.GetValue<String>("ApiTipo");
+            URLBaseApiTipo = Conf.GetValue<String>("ApiTipos");
+              
+
         }
 
         // GET: CabañaController
@@ -153,6 +158,35 @@ namespace PresentacionMVC.Controllers
         {
             try
             {
+
+                //para el manejo de la imagen
+
+                string rutaWwwRoot = WHE.WebRootPath;
+                string rutaCarpeta = Path.Combine(rutaWwwRoot, "Imagenes");
+
+                //Se obtiene la extensión del archivo que subieron
+
+                FileInfo fi = new FileInfo(cabaña.Foto.FileName);
+                string extension = fi.Extension;
+
+                //se puede validar aca que sea png o jpg y devolver excepcion si no es valido el archivo
+                //mejor si lo podemos validar en la vista así no manda el post
+
+                string nomArchivo = cabaña.Nombre + "_001." + extension;
+
+
+
+                //Genero la ruta de la carpeta que guardaré en la base de datos que es a  donde esta guardada la imagen 
+
+                string rutaArchivo = Path.Combine(rutaCarpeta, nomArchivo);
+
+                //cabaña.Foto = nomArchivo;
+
+                //Guardar la imagen
+                FileStream fs = new FileStream(rutaArchivo, FileMode.Create);
+                cabaña.Foto.CopyTo(fs);
+
+
                 if (ModelState.IsValid)
                 {
                     HttpClient cliente = new HttpClient();

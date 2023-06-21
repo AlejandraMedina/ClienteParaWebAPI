@@ -24,10 +24,7 @@ namespace PresentacionMVC.Models
         public bool Habilitada { get; set; }
 
         public int PersonasMax { get; set; }
-        public string Foto { get; set; }
-
-        
-
+        public IFormFile Foto { get; set; }
 
 
 

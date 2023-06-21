@@ -4,10 +4,10 @@
     ViewData["Title"] = "ListadoCabañas";
 }
 
+<span>@ViewBag.Mensaje</span>
+
+<div>
 <h1>Listado Cabañas</h1><br/>
-
-<div>@ViewBag.Mensaje</div>
-
 <p>
     <a asp-action="CreateCabaña">Crear Nueva</a>
 </p>
@@ -42,7 +42,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model) //ver como ver la lista de caba;as 
+        @foreach (var item in Model) 
         {
             <tr>
                 <td>
@@ -82,3 +82,4 @@
         }
     </tbody>
 </table>
+</div>
