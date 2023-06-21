@@ -36,8 +36,10 @@ namespace PresentacionMVC.Controllers
                 String url = Conf.GetValue<string>("ApiUsuarios");
                 HttpClient client = new HttpClient();
 
-                
-                var tarea = client.PostAsJsonAsync(url,vm);
+
+
+
+            var tarea = client.PostAsJsonAsync(url,vm);
                 tarea.Wait();
 
                 var tarea2 = tarea.Result.Content.ReadAsStringAsync();
@@ -48,7 +50,8 @@ namespace PresentacionMVC.Controllers
                 if (tarea.Result.IsSuccessStatusCode)                    
                 {
                     HttpContext.Session.SetString("token", body);
-                    return RedirectToAction("Index", "Tipo");
+                    HttpContext.Session.SetString("usuarioLogueado", "si");
+                return RedirectToAction("Index", "Tipo");
                 }
                 else 
                 {

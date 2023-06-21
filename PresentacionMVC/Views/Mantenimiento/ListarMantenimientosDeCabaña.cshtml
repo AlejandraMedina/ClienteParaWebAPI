@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Dominio.EntidadesNegocio.Mantenimiento>
+﻿@model IEnumerable<PresentacionMVC.Models.MantenimientoViewModel>
 
 @{
     ViewData["Title"] = "ListarMantenimientosDeCabaña";
@@ -7,6 +7,7 @@
 <h1>Listar Mantenimientos De Cabañas</h1><br>
 
 <div>@ViewBag.Mensaje</div>
+<div>@ViewBag.Mantenimientos</div>
 
 <p>
     <a asp-action="Create">Crear nuevo Mantenimiento</a>
@@ -33,7 +34,8 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model) {
+        @foreach (var item  in Model)
+        {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.Id)

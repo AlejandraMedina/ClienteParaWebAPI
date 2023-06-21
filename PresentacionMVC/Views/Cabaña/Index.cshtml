@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<PresentacionMVC.Models.CabañaViewModel>
 
 @{
     ViewData["Title"] = "ListadoCabañas";
@@ -27,9 +27,6 @@
                 @Html.DisplayNameFor(model => model.PersonasMax)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Costo)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Jacuzzi)
             </th>
             <th>
@@ -45,7 +42,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model) //ver como ver la lista de caba;as 
         {
             <tr>
                 <td>
@@ -59,10 +56,7 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.PersonasMax)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Costo)
-                </td>
+                </td>               
                 <td>
                     @Html.DisplayFor(modelItem => item.Jacuzzi)
                 </td>

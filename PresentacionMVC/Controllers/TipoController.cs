@@ -26,7 +26,7 @@ namespace PresentacionMVC.Controllers
 
 
         // GET: TipoController
-        public ActionResult Index()        {
+        public ActionResult Index(){
 
             if (HttpContext.Session.GetString("token") == null) RedirectToAction("Login", "Usuarios");
 

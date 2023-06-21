@@ -1,8 +1,9 @@
-﻿@model PresentacionMVC.Models.AltaCabañaViewModel
+﻿@model PresentacionMVC.Models.CabañaViewModel
 
 <h1>Crear Cabaña</h1><br/>
 
 <div>@ViewBag.Mensaje</div>
+<div>@ViewBag.Tipos</div>
 
 <hr />
 <div class="row">
@@ -11,45 +12,36 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
              <div class="form-group">
-                    <label asp-for="Cabaña.Nombre" class="control-label"></label>
-                    <input asp-for="Cabaña.Nombre" class="form-control" />
-                    <span asp-validation-for="Cabaña.Nombre" class="text-danger"></span>
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
              </div>
             <hr />
             <div class="form-group">
-                <label asp-for="Cabaña.NumHabitacion" class="control-label"></label>
-                <input asp-for="Cabaña.NumHabitacion" class="form-control" />
-                <span asp-validation-for="Cabaña.NumHabitacion" class="text-danger"></span>
+                <label asp-for="NumHabitacion" class="control-label"></label>
+                <input asp-for="NumHabitacion" class="form-control" />
+                <span asp-validation-for="NumHabitacion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Cabaña.Descripcion" class="control-label"></label>
-                <input asp-for="Cabaña.Descripcion" class="form-control" />
-                <span asp-validation-for="Cabaña.Descripcion" class="text-danger"></span>
-            </div>
-
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>           
             <div class="form-group">
-                <label asp-for="Cabaña.Costo" class="control-label"></label>
-                <input asp-for="Cabaña.Costo" class="form-control" />
-                <span asp-validation-for="Cabaña.Costo" class="text-danger"></span>
-            </div>
-
-            
-
-            <div class="form-group">
-                <label asp-for="Cabaña.PersonasMax" class="control-label"></label>
-                <input asp-for="Cabaña.PersonasMax" class="form-control" />
-                <span asp-validation-for="Cabaña.PersonasMax" class="text-danger"></span>
+                <label asp-for="PersonasMax" class="control-label"></label>
+                <input asp-for="PersonasMax" class="form-control" />
+                <span asp-validation-for="PersonasMax" class="text-danger"></span>
             </div>
 
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Cabaña.Jacuzzi" /> @Html.DisplayNameFor(model => model.Cabaña.Jacuzzi)
+                    <input class="form-check-input" asp-for="Jacuzzi" /> @Html.DisplayNameFor(model => model.Jacuzzi)
                 </label>
             </div>
 
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Cabaña.Habilitada" /> @Html.DisplayNameFor(model => model.Cabaña.Habilitada)
+                    <input class="form-check-input" asp-for="Habilitada" /> @Html.DisplayNameFor(model => model.Habilitada)
                 </label>
             </div>
 
@@ -57,7 +49,7 @@
             <hr />
             <div class="form-group">
                 <select name="IdTipoSeleccionado" id="IdTipoSeleccionado">
-                    @foreach (var tipo in Model.Tipos)
+                    @foreach (var tipo in @ViewBag.Tipos)   // ver como recibir por viewbag los tipos
                     {
                         <option value="@tipo.Id">@tipo.Nombre</option>
                     }

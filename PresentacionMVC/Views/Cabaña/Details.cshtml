@@ -1,4 +1,4 @@
-﻿@model Dominio.EntidadesNegocio.Cabaña
+﻿@model PresentacionMVC.Models.CabañaViewModel
 
 @{
     ViewData["Title"] = "Details";
@@ -29,12 +29,6 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NumHabitacion)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Costo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Costo)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Descripcion)
@@ -75,7 +69,7 @@
     @Html.ActionLink("Listar mantenimientos", "ListarMantenimientosDeCabaña","Mantenimiento", new {  id = Model.Id })
     @Html.ActionLink("Listar mantenimientos Por Fecha", "MantenimientosPorCabañaPorFechas","Mantenimiento", new {  id = Model.Id })
     <div>
-    @*<a asp-controller="Mantenimiento" asp-action="CreateMantenimiento">Crear mantenimiento </a>*@
+    <a asp-controller="Mantenimiento" asp-action="CreateMantenimiento">Crear mantenimiento </a>
    
     </div>
     <a asp-action="Index">Volver al inicio</a>

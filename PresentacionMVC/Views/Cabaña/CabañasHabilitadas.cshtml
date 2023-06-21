@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Dominio.EntidadesNegocio.Cabaña>
+﻿@model IEnumerable<PresentacionMVC.Models.CabañaViewModel>
+
 
 @{
     ViewData["Title"] = "CabañasHabilitadas";
@@ -19,9 +20,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.NumHabitacion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Costo)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Descripcion)
@@ -55,9 +53,6 @@
                 @Html.DisplayFor(modelItem => item.NumHabitacion)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Costo)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Descripcion)
             </td>
             <td>
@@ -71,8 +66,7 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Foto)
-            </td>
-           
+            </td>         
          
         </tr>
 }
