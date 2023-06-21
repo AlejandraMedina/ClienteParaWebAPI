@@ -193,6 +193,8 @@ namespace PresentacionMVC.Controllers
 
                     cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("token"));
 
+                    
+
                     var tarea = cliente.PostAsJsonAsync(URLBaseApiCabaña, cabaña);
                     tarea.Wait();
 
