@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wRTJhFDkZMyaO98jx8pwIrCdHNE+SQUCGLYt+yQUWcfVLhdCe6aW5ixWHqxKMU2rKrmMg9lzJnOSAunhedg9Pg==",
+  "dgSpecHash": "2gO8WF+wD7Ua0yUV4FJLjf8+yhwq+YW6vp3mpLdwXzAGnMiteQZgZmb/YoEfStNq3zsEKnU1wxl7XK4h9GarVA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\naff2\\Desktop\\ClienteParaWebAPI\\PresentacionMVC\\PresentacionMVC.csproj",
+  "projectFilePath": "C:\\Users\\naff2\\Desktop\\OBLIGATORIO2'-P3\\ClienteParaWebAPI-p3\\ClienteParaWebAPI (1)\\ClienteParaWebAPI\\PresentacionMVC\\PresentacionMVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\naff2\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\naff2\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

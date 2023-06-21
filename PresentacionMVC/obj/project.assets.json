@@ -10441,11 +10441,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\naff2\\Desktop\\ClienteParaWebAPI\\PresentacionMVC\\PresentacionMVC.csproj",
+      "projectUniqueName": "C:\\Users\\naff2\\Desktop\\OBLIGATORIO2'-P3\\ClienteParaWebAPI-p3\\ClienteParaWebAPI (1)\\ClienteParaWebAPI\\PresentacionMVC\\PresentacionMVC.csproj",
       "projectName": "PresentacionMVC",
-      "projectPath": "C:\\Users\\naff2\\Desktop\\ClienteParaWebAPI\\PresentacionMVC\\PresentacionMVC.csproj",
+      "projectPath": "C:\\Users\\naff2\\Desktop\\OBLIGATORIO2'-P3\\ClienteParaWebAPI-p3\\ClienteParaWebAPI (1)\\ClienteParaWebAPI\\PresentacionMVC\\PresentacionMVC.csproj",
       "packagesPath": "C:\\Users\\naff2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\naff2\\Desktop\\ClienteParaWebAPI\\PresentacionMVC\\obj\\",
+      "outputPath": "C:\\Users\\naff2\\Desktop\\OBLIGATORIO2'-P3\\ClienteParaWebAPI-p3\\ClienteParaWebAPI (1)\\ClienteParaWebAPI\\PresentacionMVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\naff2\\AppData\\Roaming\\NuGet\\NuGet.Config",

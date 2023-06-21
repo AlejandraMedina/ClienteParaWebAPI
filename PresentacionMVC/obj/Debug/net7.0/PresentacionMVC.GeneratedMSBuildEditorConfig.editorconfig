@@ -9,57 +9,109 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PresentacionMVC
 build_property.RootNamespace = PresentacionMVC
-build_property.ProjectDir = C:\Users\naff2\Desktop\ClienteParaWebAPI\PresentacionMVC\
+build_property.ProjectDir = C:\Users\naff2\Desktop\OBLIGATORIO2'-P3\ClienteParaWebAPI-p3\ClienteParaWebAPI (1)\ClienteParaWebAPI\PresentacionMVC\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\naff2\Desktop\ClienteParaWebAPI\PresentacionMVC
+build_property.MSBuildProjectDirectory = C:\Users\naff2\Desktop\OBLIGATORIO2'-P3\ClienteParaWebAPI-p3\ClienteParaWebAPI (1)\ClienteParaWebAPI\PresentacionMVC
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/naff2/Desktop/ClienteParaWebAPI/PresentacionMVC/Views/Shared/Error.cshtml]
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Cabaña/CabañasHabilitadas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FiYcOxYVxDYWJhw7Fhc0hhYmlsaXRhZGFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Cabaña/CabañasPorCantMaxPersonas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FiYcOxYVxDYWJhw7Fhc1BvckNhbnRNYXhQZXJzb25hcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Cabaña/CabañasPorTexto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FiYcOxYVxDYWJhw7Fhc1BvclRleHRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Cabaña/CabañasPorTipo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FiYcOxYVxDYWJhw7Fhc1BvclRpcG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Cabaña/CreateCabaña.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FiYcOxYVxDcmVhdGVDYWJhw7FhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Cabaña/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FiYcOxYVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Cabaña/EditCabaña.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FiYcOxYVxFZGl0Q2FiYcOxYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Cabaña/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FiYcOxYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Mantenimiento/CreateMantenimiento.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudGVuaW1pZW50b1xDcmVhdGVNYW50ZW5pbWllbnRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Mantenimiento/ListarMantenimientosDeCabaña.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudGVuaW1pZW50b1xMaXN0YXJNYW50ZW5pbWllbnRvc0RlQ2FiYcOxYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Mantenimiento/MantenimientosPorCabañaPorFechas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudGVuaW1pZW50b1xNYW50ZW5pbWllbnRvc1BvckNhYmHDsWFQb3JGZWNoYXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/naff2/Desktop/ClienteParaWebAPI/PresentacionMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/naff2/Desktop/ClienteParaWebAPI/PresentacionMVC/Views/Tipo/BuscarTipoPorNombre.cshtml]
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Tipo/BuscarTipoPorNombre.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1xCdXNjYXJUaXBvUG9yTm9tYnJlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/naff2/Desktop/ClienteParaWebAPI/PresentacionMVC/Views/Tipo/CreateTipo.cshtml]
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Tipo/CreateTipo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1xDcmVhdGVUaXBvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/naff2/Desktop/ClienteParaWebAPI/PresentacionMVC/Views/Tipo/DeleteTipo.cshtml]
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Tipo/DeleteTipo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1xEZWxldGVUaXBvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/naff2/Desktop/ClienteParaWebAPI/PresentacionMVC/Views/Tipo/Details.cshtml]
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Tipo/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/naff2/Desktop/ClienteParaWebAPI/PresentacionMVC/Views/Tipo/EditTipo.cshtml]
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Tipo/EditTipo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1xFZGl0VGlwby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/naff2/Desktop/ClienteParaWebAPI/PresentacionMVC/Views/Tipo/Index.cshtml]
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Tipo/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/naff2/Desktop/ClienteParaWebAPI/PresentacionMVC/Views/Usuario/Login.cshtml]
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Usuario/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/naff2/Desktop/ClienteParaWebAPI/PresentacionMVC/Views/_ViewImports.cshtml]
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/naff2/Desktop/ClienteParaWebAPI/PresentacionMVC/Views/_ViewStart.cshtml]
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/naff2/Desktop/ClienteParaWebAPI/PresentacionMVC/Views/Shared/_Layout.cshtml]
+[C:/Users/naff2/Desktop/OBLIGATORIO2'-P3/ClienteParaWebAPI-p3/ClienteParaWebAPI (1)/ClienteParaWebAPI/PresentacionMVC/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-3iljdtc4cr
